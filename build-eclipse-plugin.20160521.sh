@@ -33,7 +33,7 @@ cd ..
 
 # Needs a copy of latest Windup.
 $SCRIPT_DIR/clone-windup.sh
-$SCRIPT_DIR/build-windup.sh
+$SCRIPT_DIR/build-windup.sh || exit 1
 
 # Should be able to build now.
 cd windup-eclipse-plugin
