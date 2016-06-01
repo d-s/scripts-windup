@@ -10,7 +10,7 @@ readonly PROJECTS_ORDERED="windup windup-rulesets windup-distribution"
 for project in $PROJECTS_ORDERED; do
   cd $project
   git checkout master
-  git pull upstream master
+  git pull $UPSTREAM_REMOTE_NAME master
   cd ..
 done
 

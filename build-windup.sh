@@ -2,7 +2,7 @@
 #
 # Builds all projects needed to create a windup-distribution archive.
 #
-# Usage [from parent directory of projects]: build-windup.sh [output-dir]
+# Usage [from parent directory of projects]: build-windup.sh [output-path]
 #
 # Execution will terminate early if any builds fail.
 
@@ -43,6 +43,7 @@ if [[ $NUM_MATCHES -ne 1 ]]; then
   giveup 3
 fi
 
-echo "copying output archive to $1/$FILENAME"
+echo "copying output archive to $1"
+mkdir -p $(dirname $(realpath $1))
 cp $ORIG_OUTPUT_DIR/$FILENAME $1
 
