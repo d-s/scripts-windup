@@ -9,6 +9,7 @@
 
 SCRIPT_DIR="$(dirname $(realpath $0))"
 
+ORIGIN_ACCOUNT="d-s"  # Replace with yourself (or windup).
 MVN_COMMAND="mvn clean install"
 MVN_COMMAND_SKIPTESTS="$MVN_COMMAND -DskipTests"
 
@@ -32,7 +33,7 @@ $MVN_COMMAND_SKIPTESTS || exit 1
 cd ..
 
 # Needs a copy of latest Windup.
-$SCRIPT_DIR/clone-windup.sh
+$SCRIPT_DIR/clone-windup.sh $ORIGIN_ACCOUNT
 $SCRIPT_DIR/build-windup.sh || exit 1
 
 # Should be able to build now.
