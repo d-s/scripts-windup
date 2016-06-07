@@ -18,7 +18,14 @@ readonly UPSTREAM_ACCOUNT="windup"
 readonly PROJECTS_ORDERED="windup windup-rulesets windup-distribution"
 
 for project in $PROJECTS_ORDERED; do
-  git clone git@github.com:$ORIGIN_ACCOUNT/${project}.git
+  # Use https:// path for remotes pointing to the upstream repo so it's not so
+  # easy to accidentally push to it (since you'll be prompted for a password.)
+  origin_remote_path="https://github.com/$ORIGIN_ACCOUNT/${project}.git"
+  if [[ $ORIGIN_ACCOUNT != $UPSTREAM_ACCOUNT ]]; then
+    origin_remote_path="git@github.com:$ORIGIN_ACCOUNT/${project}.git"
+  fi
+
+  git clone $origin_remote_path
   cd $project
   git remote add upstream https://github.com/$UPSTREAM_ACCOUNT/${project}.git
   cd ..
