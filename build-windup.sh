@@ -7,7 +7,7 @@
 # Execution will terminate early if any builds fail.
 
 readonly PROJECTS_ORDERED="windup windup-rulesets windup-distribution"
-readonly MVN_COMMAND="mvn install -DskipTests"
+readonly MVN_COMMAND="mvn clean install -DskipTests"
 
 readonly WORKING_DIR="$(pwd)"
 

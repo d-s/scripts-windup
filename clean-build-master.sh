@@ -3,7 +3,7 @@
 # Clones all Windup projects from the latest master and does a clean build.
 #
 # Usage [from empty parent directory of projects to be created]:
-# clean-build-windup.sh OUTPUT_PATH
+# clean-build-master.sh OUTPUT_PATH
 
 if [[ -z $1 ]]; then
   echo "error: output path is required"
