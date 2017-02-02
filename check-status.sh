@@ -10,6 +10,7 @@ for project in $PROJECTS_ORDERED; do
   cd $project
   echo "repo: $project"
   git status
+  git log --oneline -5
   cd ..
 done
 
